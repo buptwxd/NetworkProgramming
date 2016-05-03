@@ -1,0 +1,7 @@
+Summary for creating server using python
+Main Steps:
+1.create a socket   sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+2.bind the socket to a (ip, port) pair    sock.bind((options.iface, options.port or 0))
+3.listen the specified port     sock.listen(5)  5 means the maxium number in the queue
+4.accept one client request     sock, addr = listen_socket.accept()  this socket is dedicate for the client and the original is for listen
+5.do something for the accepted sokcet
