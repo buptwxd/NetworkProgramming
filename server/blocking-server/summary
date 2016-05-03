@@ -5,3 +5,14 @@ Main Steps:
 3.listen the specified port     sock.listen(5)  5 means the maxium number in the queue
 4.accept one client request     sock, addr = listen_socket.accept()  this socket is dedicate for the client and the original is for listen
 5.do something for the accepted sokcet
+
+
+Summary for creating server using C 
+Main steps:
+1.socket()    listenfd = Socket(AF_INET, SOCK_STREAM, 0);
+2.bind()    Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
+3.listen()  Listen(listenfd, LISTENQ);
+4.accept()  connfd = Accept(listenfd, (SA *) &cliaddr, &len);
+5.handle accepted socket
+
+So based on the above steps, it's almost the same for creating server using python and C.
